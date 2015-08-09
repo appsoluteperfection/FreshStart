@@ -6,5 +6,4 @@ public interface StatusQuery {
 
     DeviceStatus getCurrentStatus();
 
-
 }
