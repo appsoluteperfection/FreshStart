@@ -6,14 +6,14 @@ public class DeviceStatusHistorySummary {
     private boolean _hasHitChargingPercentage;
     private DeviceStatus _lastStatus;
 
-    void updateStatus(DeviceStatus deviceStatus){
+    public void updateStatus(DeviceStatus deviceStatus){
         _lastStatus = deviceStatus;
         if (RESET_PERCENTAGE_THRESHOLD >= deviceStatus.getBatteryLevel()){
             _hasHitChargingPercentage = true;
         }
     }
 
-    boolean shouldRestart(){
+    public boolean shouldRestart(){
         return _hasHitChargingPercentage
                 && !_lastStatus.isCharging();
     }
